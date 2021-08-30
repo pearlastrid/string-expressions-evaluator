@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>String Expression Evaluator</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Pearl Lin">
+        <meta charset="utf-8">
+        <link href="style.css" rel="stylesheet">
+        <script async src="evaluate.js"></script>
+    </head>
+    <body>
+        <div class="banner">
+            <h1 class="title">String Expression Evaluator</h1>
+        </div>
+            <h4 class="author">By: Pearl Lin</h4>
+        <div class="introduction">
+            <p>Multi-operator expressions are evaluated by order of <a href="https://www.mathsisfun.com/operation-order-pemdas.html" target="blank">PEMDAS</a>. PEMDAS rules are down below. Type in a multi-operator expression and 
+                hit evaluate to see your result. The translator takes in your expression as a string, parses it, and solves it automatically!
+            </p>
+        </div>
+        <hr id="introhr">
+        <div class="rules">
+            <h2>PEMDAS Rules</h2>
+                <p><span class="symbol">1. </span><span class="strong">Parentheses</span> have first precedence</p>
+                <br>
+                <p><span class="symbol">2. </span><span class="strong">Exponents</span> have second precedence</p>
+                <br>
+                <p><span class="symbol">3. </span><span class="strong">Multiplication</span> and division have third precedence, and are evaluated from left to right.</p>
+                <br>
+                <p><span class="symbol">4. </span>Multiplication and <span class="strong">division</span> have third precedence, and are evaluated from left to right.</p>
+                <br>
+                <p><span class="symbol">5. </span><span class="strong">Addition</span> and subtraction have last precedence, and are evaluated from left to right.</p>
+                <br>
+                <p><span class="symbol">6. </span>Addition and <span class="strong">subtraction</span> have last precedence, and are evaluated from left to right.</p>
+        </div>
+        <hr>
+        <div class="guide">
+            <h2>Guidelines for Inputting Your Expression</h2>
+                <p class="guidelines"><span class="symbol">✔ </span>Please use * · x × to denote multiplication. Do not use parentheses () for multiplication</p>
+                <br>
+                <p class="guidelines"><span class="symbol">✔ </span>Use either / or ÷ to indicate division</p>
+                <br>
+                <p class="guidelines"><span class="symbol">✔ </span>Use the carrot symbol ^ to represent exponentiation.</p>
+                <br>
+                <p class="guidelines"><span class="symbol">✔ </span>Use the + symbol for addition and use any of the following symbols: - ˗ − ﹣ － for subtraction & negative numbers</p>
+                <br>
+                <p class="guidelines"><span class="symbol">✔ </span>Supported ways of writing parentheses: () [] {}</p>
+                <br>
+                <p class="guidelines"><span class="symbol">✔ </span>Remember to pair all the sets of parentheses you write! If the number of opening parentheses and closing parentheses 
+                    does not equal, an error will show
+                </p>
+                <br>
+                <p class="guidelines"><span class="symbol">✔ </span>Only use parentheses to group expressions! If you want to indicate multiplication, make sure to use any of the
+                    supported multiplication operators. <br>Ex. Correct: 2 * (3 + 8) Incorrect: 2(3 + 8)
+                </p>
+                <br>
+                <p class="guidelines"><span class="symbol">✔ </span>No variables can be in the expression. This is because the evaulator is programmed to give you an exact 
+                numerical result.</p>
+        </div>
+        <hr>
+        <div class="expressionInput">
+            <form>
+                <label for="stringexpression"><h2>Input your expression here!</h2></label>
+                <input type="text" name="stringexpression" id="stringExpression" required>
+                <input type="button" id="button" value="Evaluate" onclick="parse()">
+            </form>
+        </div>
+        <h2 id="evaluatedResult">Equals: </h2>
+    </body>
+</html>
