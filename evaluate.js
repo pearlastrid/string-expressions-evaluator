@@ -32,7 +32,11 @@ function calculate(input) {
     /*replace all minus symbols that are immediately preceded by digit(s) with underscores --> this helps differentiate 
     between negative signs and minus signs. Negative signs are not immediately preceded by digits, while minus symbols are. 
     Underscores will represent substraction, while minus symbols will represent negative signs. */
-    output = output.replace(/(?<=[0-9])[\-]/g, '_');
+    const subtractionOperatorRegex = /[0-9](?=-)/;
+    if (subtractionOperatorRegex.test(output)) {
+        let index = output.search(subtractionOperatorRegex);
+        output = output.substring(0, index + 1) + "_" + output.substring(index + 2);
+    }
     // replace different ways of writing a multiplication symbol with a '*', so that the formatting remains uniform across all expressions 
     output = output.replace(/[x×·✕]/g, '*');
     // replace the alternate way of writing a division symbol with a '/', so that the formatting remains uniform across all expressions
